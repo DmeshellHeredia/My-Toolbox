@@ -65,3 +65,7 @@ backup-*/
 .dart_tool/
 build/
 android/local.properties
+
+# Documentos temporales
+INSTRUCCIONES.txt
+LEEME.txt
