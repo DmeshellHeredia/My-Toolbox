@@ -60,10 +60,14 @@ void main() {
         if (request.url.host == 'raw.githubusercontent.com') {
           backupRequests++;
           expect(request.url.scheme, 'https');
-          return http.Response('''[
+          return http.Response(
+            '''[
           {"name":"Universidad Backup","country":"Backupia", "domains":["backup.edu"],"web_pages":["https://backup.edu"]},
           {"name":"Universidad Otro País","country":"Otherland","domains":[],"web_pages":[]}
-        ]''', 200);
+        ]''',
+            200,
+            headers: const {'content-type': 'application/json; charset=utf-8'},
+          );
         }
         fail('Origen inesperado: ${request.url.host}');
       });
